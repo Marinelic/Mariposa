@@ -3,35 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" href="assets/logoPage.png" type="image/x-icon">
+        <script src="https://cdn.tailwindcss.com"></script>
     <title>Mariposa</title>
 </head>
 <body>
-    <header class="sticky top-0 z-50 border-b border-[#A13E3A] bg-white/80 backdrop-blur">
-        <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
-            <a href="" class="flex items-center gap-3">
-                <img src="assets/logoPage.png" alt="Logo" class="h-10 w-10 rounded-xl object-contain">
+    <header class="sticky top-0 z-50 border-b border-[#A13E3A] bg-white/20 backdrop-blur">
+        <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-1 py-3">
+            <a 
+                id="brand" 
+                href="#top" 
+                class="flex items-center gap-3">
+                <img src="assets/logoPage.png" alt="Logo" class="h-20 w-20 rounded-xl object-contain">
                 <div class="leading-tight">
-                    <div class="text-base font-extrabold text-[#3A9EA2]">Mariposa</div>
+                    <div class="md:text-3xl text-lg font-extrabold text-[#3A9EA2]">Mariposa</div>
                 </div>
             </a>
 
             <nav class="hidden items-center gap-6 md:flex">
-                <a href="#o-nama" class="text-sm font-semibold text-[#1f5456] hover:text-[#74cacd]">O nama</a>
-                <a href="#o-nama" class="text-sm font-semibold text-[#1f5456] hover:text-[#74cacd]">Prostor</a>
-                <a href="#o-nama" class="text-sm font-semibold text-[#1f5456] hover:text-[#74cacd]">Usluge</a>
-                <a href="#o-nama" class="text-sm font-semibold text-[#1f5456] hover:text-[#74cacd]">Aktivnosti</a>
+                <a href="#o-nama" class="text-2xl font-semibold text-[#1f5456] hover:text-[#74cacd]">O nama</a>
+                <a href="#prostor" class="text-2xl font-semibold text-[#1f5456] hover:text-[#74cacd]">Prostor</a>
+                <a href="#usluge" class="text-2xl font-semibold text-[#1f5456] hover:text-[#74cacd]">Usluge</a>
+                <a href="#aktivnosti" class="text-2xl font-semibold text-[#1f5456] hover:text-[#74cacd]">Aktivnosti</a>
             </nav>
 
-            <a href="#join" 
-               class="hiiden md:inline-flex items-center justify-center rounded-full text-white bg-[#a13e3a] px-4 py-2 text-sm shadow-sm hover:bg-[#74cacd] active:translate-y-1">
-                Pridružite nam se
+            <a 
+              href="#join" 
+              class="hidden md:inline-flex items-center justify-center rounded-full text-white bg-[#a13e3a] px-4 py-2 text-lg shadow-sm hover:bg-[#74cacd] active:translate-y-1">
+              Pridružite nam se
             </a>
+
+            <button
+                id="menuBtn"
+                class=" relative inline-flex items-center justify-center rounded-xl border border-[#A13E3A]/30 bg-white px-3 py-2 text-[#1f5456] md:hidden"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+                aria-label="Open menu"
+            >
+                 <svg 
+                    id="iconOpen" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    class="h-6 w-6" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- Icon -->
+                <svg 
+                    id="iconClose" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    class="hidden h-6 w-6" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div id="mobileMenu" class="hidden md:hidden">
+                <div class="mt-3 rounded-2xl border border-[#A13E3A]/20 bg-white p-3 shadow-sm">
+                    <nav class="flex flex-col gap-2">
+                        <a href="#o-nama" class="rounded-xl px-3 py-2 text-sm font-semibold text-[#1f5456] hover:bg-[#eaf7f7]">O nama</a>
+                        <a href="#prostor" class="rounded-xl px-3 py-2 text-sm font-semibold text-[#1f5456] hover:bg-[#eaf7f7]">Prostor</a>
+                        <a href="#usluge" class="rounded-xl px-3 py-2 text-sm font-semibold text-[#1f5456] hover:bg-[#eaf7f7]">Usluge</a>
+                        <a href="#aktivnosti" class="rounded-xl px-3 py-2 text-sm font-semibold text-[#1f5456] hover:bg-[#eaf7f7]">Aktivnosti</a>
+                    </nav>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section id="top" class="relative h-[90vh] min-h-[600px] w-full overflow-hidden">
+    <section id="top" class="relative h-[70vh] min-h-[420px] w-full overflow-hidden md:h-[90vh] md:min-h-[600px]">
 
         <video
             class="absolute inset-0 h-full w-full object-cover"
@@ -45,27 +89,59 @@
 
         <div class="absolute inset-0 bg-black/40"></div>
 
-        <div class="relative z-10 flex h-full items-center justify-center">
-            <div class="mx-auto flex w-full max-w-3xl px-4 flex-col items-center text-center">
-                <span class="inline-flex items-center rounded-full bg-[#74cacd] px-3 py-1 text-xs font-bold">
+        <div class="relative z-10 flex h-full w-full items-center justify-center">
+            <div class="flex max-w-3xl -translate-y-8 flex-col items-center px-4 text-center">
+                <span class="mb-4 inline-flex items-center rounded-full bg-[#74cacd] px-4 py-1 font-bold text-white md:text-2xl">
                     Obrt za čuvanje djece
                 </span>
 
-                <h1 class="mt-4 text-4xl leading-tight tracking-tight text-white md:text-5xl">
+                <h1 class="text-3xl leading-tight tracking-tight text-white md:text-6xl">
                     Mariposa
                 </h1>
 
-                <p class="mt-3 text-base leading-relaxing text-white md:text-lg">
+                <p class="mt-4 max-w-2xl text-base md:text-2xl leading-relaxing text-white">
                     Toplo, sigurno i aktivno okruženje uz individualan pristup, kreativne aktivnosti i puno igre.
                 </p>
 
-                <div class="mt-6 flex flex-wrap items-center gap-3">
-                    <a href="#join" class="inline-flex items-center justify-center rounded-full text-white bg-[#a13e3a] px-5 py-3 text-sm font-bold text-gray-900 shadow-sm hover:bg-[#74cacd] active:translate-y-px">Pošalji upit</a>
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="#join" class="inline-flex items-center justify-center rounded-full text-white bg-[#a13e3a] px-4 md:px-6 py-2 text-sm md:text-2xl font-bold text-gray-900 shadow-sm hover:bg-[#74cacd] active:translate-y-px">Pošalji upit</a>
             
-                    <a href="#usluge" class="inline-flex items-center justify-center rounded-full border border-[#a13e3a] bg-white px-5 py-3 text-sm font-bold text-gray-900 hover:bg-[#a13e3a] hover:text-white active:translate-y-px">Pogledaj usluge</a>
+                    <a href="#usluge" class="inline-flex items-center justify-center rounded-full border border-[#a13e3a] bg-white px-4 md:px-6 py-2 text-sm md:text-2xl font-bold text-gray-900 hover:bg-[#74cacd] hover:text-white active:translate-y-px">Pogledaj usluge</a>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <section class="py-10">
+        <div class="mx-auto max-w-6xl px-4">
+            <div class="grid gap-4 md:grid-cols-3">
+                <div class="rounded-3xl border border-[#a13e3a] bg-white p-6 shadow-sm">
+                    <div class="text-2xl font-extrabold text-center text-[#3A9EA2]">👶🏻 Grupa</div>
+                        <p class="mt-2 text-lg leading-relaxed text-gray-600 text-center">
+                        Djecu od 1. godine do predškolskog uzrasta čuvaju dvije odgajateljice do maksimalno 10 djece u grupi.
+                        </p>
+                </div>
+
+                <div class="rounded-3xl border border-[#a13e3a] bg-white p-6 shadow-sm">
+                    <div class="text-2xl font-extrabold text-center text-[#3A9EA2]">🕰️ Radno vrijeme</div>
+                        <p class="mt-2 text-lg leading-relaxed text-gray-600 text-center">
+                        Čuvamo vaše dijete svakim radnim danom od 7:00 do 18:00.
+                        </p>
+                </div>
+
+                <div class="rounded-3xl border border-[#a13e3a] bg-white p-6 shadow-sm">
+                    <div class="text-2xl font-extrabold text-center text-[#3A9EA2]">🥕 Prehrana</div>
+                        <p class="mt-2 text-lg leading-relaxed text-gray-600 text-center">
+                        Kuhamo raznolike obroke te vodimo računa o posebnim prehrambenim potrebama vašeg djeteta.
+                        </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="app.js"></script>
 </body>
 </html>
