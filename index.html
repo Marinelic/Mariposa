@@ -3,141 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
         <link rel="icon" href="assets/logoPage.png" type="image/x-icon">
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="config.js"></script>
     <title>Mariposa</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .animate-bounce {
+            animation: bounce 3s infinite;
+        }
+
+        .bounce-delay-1 {
+            animation-delay: 0s;
+            animation-duration: 3s;
+        }
+
+        .bounce-delay-2 {
+            animation-delay: 1s;
+            animation-duration: 4s;
+        }
+
+        .bounce-delay-3 {
+            animation-delay: 2s;
+            animation-duration: 5s;
+        }
+
+        .bounce-delay-4 {
+            animation-delay: 1.5s;
+            animation-duration: 3.5s;
+        }
+    </style>
+
 </head>
 <body>
-    <header class="sticky top-0 z-50 border-b border-[#A13E3A] bg-white/20 backdrop-blur">
-        <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-1 py-3">
-            <a 
-                id="brand" 
-                href="#top" 
-                class="flex items-center gap-3">
-                <img src="assets/logoPage.png" alt="Logo" class="h-20 w-20 rounded-xl object-contain">
-                <div class="leading-tight">
-                    <div class="md:text-3xl text-lg font-extrabold text-[#3A9EA2]">Mariposa</div>
+    
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="bg-gradient-to-br from-yellow-400 to-orange-500 p-2 rounded-xl">
+                         <img src="assets/LOGO.png" alt="Mariposa" class="h-10 w-10 object-contain" />
+                    </div>
+                    <span class="font-bold text-2xl text-[#81D8D0]">Mariposa</span>
                 </div>
-            </a>
 
-            <nav class="hidden items-center gap-6 md:flex">
-                <a href="#o-nama" class="text-2xl font-semibold text-[#1f5456] hover:text-[#74cacd]">O nama</a>
-                <a href="#prostor" class="text-2xl font-semibold text-[#1f5456] hover:text-[#74cacd]">Prostor</a>
-                <a href="#usluge" class="text-2xl font-semibold text-[#1f5456] hover:text-[#74cacd]">Usluge</a>
-                <a href="#aktivnosti" class="text-2xl font-semibold text-[#1f5456] hover:text-[#74cacd]">Aktivnosti</a>
-            </nav>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#hero" class="text-gray-700 hover:text-[#81D8D0] transition-colors font-medium">Naslovna</a>
+                    <a href="#about" class="text-gray-700 hover:text-[#81D8D0] transition-colors font-medium">O nama</a>
+                    <a href="#programs" class="text-gray-700 hover:text-[#81D8D0] transition-colors font-medium">Programi</a>
+                    <a href="#activities" class="text-gray-700 hover:text-[#81D8D0] transition-colors font-medium">Aktivnosti</a>
+                    <a href="#contact" class="text-gray-700 hover:text-[#81D8D0] transition-colors font-medium">Kontakt</a>
+                </div>
 
-            <a 
-              href="#join" 
-              class="hidden md:inline-flex items-center justify-center rounded-full text-white bg-[#a13e3a] px-4 py-2 text-lg shadow-sm hover:bg-[#74cacd] active:translate-y-1">
-              Pridružite nam se
-            </a>
+                <!-- CTA Button - Desktop -->
+                <div class="hidden md:block">
+                    <button class="bg-gradient-to-r from-[#FF6B9D] to-[#FFA500] hover:from-[#FF5A8C] hover:to-[#FF9400] text-white px-6 py-2 rounded-lg font-medium transition-all shadow-md hover:shadow-lg">
+                        Pridružite nam se
+                    </button>
+                </div>
 
-            <button
-                id="menuBtn"
-                class=" relative inline-flex items-center justify-center rounded-xl border border-[#A13E3A]/30 bg-white px-3 py-2 text-[#1f5456] md:hidden"
-                aria-controls="mobileMenu"
-                aria-expanded="false"
-                aria-label="Open menu"
-            >
-                 <svg 
-                    id="iconOpen" 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    class="h-6 w-6" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                <!-- Icon -->
-                <svg 
-                    id="iconClose" 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    class="hidden h-6 w-6" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
 
-            <div id="mobileMenu" class="hidden md:hidden">
-                <div class="mt-3 rounded-2xl border border-[#A13E3A]/20 bg-white p-3 shadow-sm">
-                    <nav class="flex flex-col gap-2">
-                        <a href="#o-nama" class="rounded-xl px-3 py-2 text-sm font-semibold text-[#1f5456] hover:bg-[#eaf7f7]">O nama</a>
-                        <a href="#prostor" class="rounded-xl px-3 py-2 text-sm font-semibold text-[#1f5456] hover:bg-[#eaf7f7]">Prostor</a>
-                        <a href="#usluge" class="rounded-xl px-3 py-2 text-sm font-semibold text-[#1f5456] hover:bg-[#eaf7f7]">Usluge</a>
-                        <a href="#aktivnosti" class="rounded-xl px-3 py-2 text-sm font-semibold text-[#1f5456] hover:bg-[#eaf7f7]">Aktivnosti</a>
-                    </nav>
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-200 text-center">
+                <div class="flex flex-col gap-4">
+                    <a href="#hero" class="text-gray-700 hover:text-[#81D8D0] transition-colors font-medium mobile-link">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-[#81D8D0] transition-colors font-medium mobile-link">About</a>
+                    <a href="#programs" class="text-gray-700 hover:text-[#81D8D0] transition-colors font-medium mobile-link">Programs</a>
+                    <a href="#activities" class="text-gray-700 hover:text-[#81D8D0] transition-colors font-medium mobile-link">Activities</a>
+                    <a href="#contact" class="text-gray-700 hover:text-[#81D8D0] transition-colors font-medium mobile-link">Contact</a>
+                    <button class="bg-gradient-to-r from-[#FF6B9D] to-[#FFA500] text-white px-6 py-2 rounded-lg font-medium w-full">
+                        Pridružite nam se
+                    </button>
                 </div>
             </div>
         </div>
-    </header>
-
-    <section id="top" class="relative h-[70vh] min-h-[420px] w-full overflow-hidden md:h-[90vh] md:min-h-[600px]">
-
-        <video
-            class="absolute inset-0 h-full w-full object-cover"
-            autoplay
-            muted
-            loop
-            playsinline
-        >
-            <source src="assets/bg-hero.mp4" type="video/mp4" />
-        </video>
-
-        <div class="absolute inset-0 bg-black/40"></div>
-
-        <div class="relative z-10 flex h-full w-full items-center justify-center">
-            <div class="flex max-w-3xl -translate-y-8 flex-col items-center px-4 text-center">
-                <span class="mb-4 inline-flex items-center rounded-full bg-[#74cacd] px-4 py-1 font-bold text-white md:text-2xl">
-                    Obrt za čuvanje djece
-                </span>
-
-                <h1 class="text-3xl leading-tight tracking-tight text-white md:text-6xl">
-                    Mariposa
-                </h1>
-
-                <p class="mt-4 max-w-2xl text-base md:text-2xl leading-relaxing text-white">
-                    Toplo, sigurno i aktivno okruženje uz individualan pristup, kreativne aktivnosti i puno igre.
-                </p>
-
-                <div class="mt-8 flex flex-wrap items-center gap-4">
-                    <a href="#join" class="inline-flex items-center justify-center rounded-full text-white bg-[#a13e3a] px-4 md:px-6 py-2 text-sm md:text-2xl font-bold text-gray-900 shadow-sm hover:bg-[#74cacd] active:translate-y-px">Pošalji upit</a>
-            
-                    <a href="#usluge" class="inline-flex items-center justify-center rounded-full border border-[#a13e3a] bg-white px-4 md:px-6 py-2 text-sm md:text-2xl font-bold text-gray-900 hover:bg-[#74cacd] hover:text-white active:translate-y-px">Pogledaj usluge</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    </nav>
 
 
-    <section class="py-10">
-        <div class="mx-auto max-w-6xl px-4">
-            <div class="grid gap-4 md:grid-cols-3">
-                <div class="rounded-3xl border border-[#a13e3a] bg-white p-6 shadow-sm">
-                    <div class="text-2xl font-extrabold text-center text-[#3A9EA2]">👶🏻 Grupa</div>
-                        <p class="mt-2 text-lg leading-relaxed text-gray-600 text-center">
-                        Djecu od 1. godine do predškolskog uzrasta čuvaju dvije odgajateljice do maksimalno 10 djece u grupi.
-                        </p>
-                </div>
-
-                <div class="rounded-3xl border border-[#a13e3a] bg-white p-6 shadow-sm">
-                    <div class="text-2xl font-extrabold text-center text-[#3A9EA2]">🕰️ Radno vrijeme</div>
-                        <p class="mt-2 text-lg leading-relaxed text-gray-600 text-center">
-                        Čuvamo vaše dijete svakim radnim danom od 7:00 do 18:00.
-                        </p>
-                </div>
-
-                <div class="rounded-3xl border border-[#a13e3a] bg-white p-6 shadow-sm">
-                    <div class="text-2xl font-extrabold text-center text-[#3A9EA2]">🥕 Prehrana</div>
-                        <p class="mt-2 text-lg leading-relaxed text-gray-600 text-center">
-                        Kuhamo raznolike obroke te vodimo računa o posebnim prehrambenim potrebama vašeg djeteta.
-                        </p>
-                </div>
-            </div>
-        </div>
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen overflow-hidden bg-white">
+         <!-- Decorative Elements -->
+        <div class="absolute top-20 left-20 w-20 h-20 bg-yellow-400 rounded-full opacity-40 animate-bounce bounce-delay-1"></div>
+        <div class="absolute top-20 right-20 w-16 h-16 bg-pink-400 rounded-full opacity-40 animate-bounce bounce-delay-2"></div>
+        <div class="absolute bottom-20 left-1/4 w-24 h-24 rounded-full opacity-40 animate-bounce bounce-delay-3" style="background-color: #81D8D0;"></div>
+        <div class="absolute bottom-20 right-1/4 w-14 h-14 bg-green-400 rounded-full opacity-40 animate-bounce bounce-delay-4"></div>
     </section>
 
 

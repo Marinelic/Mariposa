@@ -1,38 +1,81 @@
+ 
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  const btn = document.getElementById("menuBtn");
-  const menu = document.getElementById("mobileMenu");
-  const iconOpen = document.getElementById("iconOpen");
-  const iconClose = document.getElementById("iconClose");
-  const brand = document.getElementById("brand")
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
 
-  function closeMenu() {
-    menu.classList.add("hidden");
-    iconOpen.classList.remove("hidden");
-    iconClose.classList.add("hidden");
-    btn.setAttribute("aria-expanded", "false");
-    brand.classList.remove("hidden");
-  }
+        // Close mobile menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
 
-  btn.addEventListener("click", () => {
-    const isHidden = menu.classList.contains("hidden");
-    if (isHidden) {
-      menu.classList.remove("hidden");
-      iconOpen.classList.add("hidden");
-      iconClose.classList.remove("hidden");
-      btn.setAttribute("aria-expanded", "true");
-      brand.classList.add("hidden");
-    } else {
-      closeMenu();
-    }
-  });
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
 
-  // Close menu when clicking a link
-  menu.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", closeMenu);
-  });
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
 
-  // Optional: close menu on Escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
+            if (currentScroll <= 0) {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-lg');
+            }
 
+            lastScroll = currentScroll;
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message')
+            };
+
+            // Log form data (in a real application, you would send this to a server)
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = navbar.offsetHeight;
+                    const targetPosition = target.offsetTop - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
