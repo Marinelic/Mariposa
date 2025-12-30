@@ -63,11 +63,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
-                <div class="flex items-center gap-1">
-                    <div class="p-2">
-                         <img src="assets/LOGO.png" alt="Mariposa" class="h-20 w-20 object-contain" />
+                <div class="flex items-center gap-2">
+                    <div class="p-1">
+                         <img 
+                            src="assets/LOGO.png" 
+                            alt="Mariposa" 
+                            class="h-20 w-20 object-contain" />
                     </div>
-                    <span class="font-bold text-2xl text-[#81D8D0]">Mariposa</span>
+                    <span class="font-bold text-2xl text-[#81D8D0] relative top-[3px] left-[-12px]">Mariposa</span>
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -87,7 +90,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 relative top-[6px] right-[10px]">
                     <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -122,12 +125,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-center min-h-screen py-20">
                 <!-- Left - Content -->
-                <div class="space-y-8 mt-12">
-                    <div class="inline-block bg-yellow-400 text-yellow-900 px-5 py-2 rounded-full shadow-md font-medium">
+                <div class="space-y-8 mt-12 text-center md:text-left">
+                    <div class="inline-block bg-yellow-400 text-yellow-900 px-6 py-2 rounded-full shadow-md font-medium">
                         Dobrodošli u našu zajednicu za učenje
                     </div>
 
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight" style="color: #81D8D0;">
+                    <h1 class="text-center md:text-left text-5xl md:text-6xl lg:text-7xl font-bold leading-tight" style="color: #81D8D0;">
                         Gdje svako djetetovo putovanje počinje s radošću
                     </h1>
 
@@ -208,23 +211,25 @@
 
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gradient-to-b from-white to-blue-50">
+    <section id="about" class="md:py-20 py-10 bg-gradient-to-b from-white to-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Left - Image -->
                 <div class="relative">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl">
                     <img
                         src="assets/pristup4.jpg"
                         alt="About us"
-                        class="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
+                        class="w-full h-full object-cover"
                     />
-                    <div class="absolute -bottom-6 -right-6 bg-yellow-400 rounded-2xl p-6 shadow-xl max-w-[200px]">
+                    </div>
+                    <div class="absolute -bottom-10 -right-0 md:-bottom-8 md:-right-4 bg-yellow-400 rounded-2xl p-4 md:p-6 shadow-xl max-w-[200px]">
                         <p class="text-yellow-900 font-bold text-lg">Kreativno učenje</p>
                     </div>
                 </div>
 
                 <!-- Right - Content -->
-                <div class="space-y-6">
+                <div class="space-y-6 md:text-left text-center mt-14">
                     <div class="inline-block px-4 py-2 rounded-full font-medium" style="background-color: #E0F5F3; color: #81D8D0;">
                         O nama
                     </div>
@@ -299,7 +304,7 @@
             <div class="grid md:grid-cols-3 gap-8 text-center">
                 <!-- Program 1 -->
                 <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-yellow-400">
-                    <div class="bg-yellow-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                    <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-6">
                         <span class="text-3xl">🧸</span>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-3">Program za malu djecu</h3>
@@ -311,7 +316,7 @@
 
                 <!-- Program 2 -->
                 <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4" style="border-color: #81D8D0;">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background-color: #E0F5F3;">
+                    <div class="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-6" style="background-color: #E0F5F3;">
                         <span class="text-3xl">📚</span>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-3">Predškolski program</h3>
@@ -323,7 +328,7 @@
 
                 <!-- Program 3 -->
                 <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-pink-400">
-                    <div class="bg-pink-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                    <div class="bg-pink-100 w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-6">
                         <span class="text-3xl">🎓</span>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-3">Predškolski program</h3>
@@ -354,7 +359,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                 <!-- Activity 1 -->
                 <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all">
-                    <div class="bg-blue-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+                    <div class="bg-blue-100 w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
                         </svg>
@@ -365,7 +370,7 @@
 
                 <!-- Activity 2 -->
                 <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all">
-                    <div class="bg-green-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+                    <div class="bg-green-100 w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
                         </svg>
@@ -376,7 +381,7 @@
 
                 <!-- Activity 3 -->
                 <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all">
-                    <div class="bg-purple-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+                    <div class="bg-purple-100 w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                         </svg>
@@ -387,7 +392,7 @@
 
                 <!-- Activity 4 -->
                 <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all">
-                    <div class="bg-yellow-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+                    <div class="bg-yellow-100 w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
@@ -414,7 +419,7 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid md:grid-cols-2 gap-12 text-center md:text-left">
                 <!-- Contact Info -->
                 <div class="space-y-6">
                     <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm">
@@ -424,7 +429,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             </svg>
                         </div>
-                        <div>
+                        <div class="text-center md:text-left">
                             <h4 class="font-bold text-gray-800 mb-1">Adresa</h4>
                             <p class="text-gray-600">Ul. Maršala Tita 113, 51410, Opatija</p>
                         </div>
@@ -436,7 +441,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                             </svg>
                         </div>
-                        <div>
+                        <div class="ml-20 md:ml-0">
                             <h4 class="font-bold text-gray-800 mb-1">Telefon</h4>
                             <p class="text-gray-600">01 123 456</p>
                         </div>
@@ -448,7 +453,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                         </div>
-                        <div>
+                        <div class="ml-10 md:ml-0">
                             <h4 class="font-bold text-gray-800 mb-1">Email</h4>
                             <p class="text-gray-600">info@mariposa.com</p>
                         </div>
@@ -460,7 +465,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <div>
+                        <div class="text-center md:text-left">
                             <h4 class="font-bold text-gray-800 mb-1">Radno vrijeme</h4>
                             <p class="text-gray-600">Ponedjeljak - Petak: 7:00 - 18:00</p>
                         </div>
@@ -537,7 +542,7 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Logo & Description -->
                 <div class="space-y-4">
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-2 ml-20 md:ml-0">
                         <div class="bg-white/20 p-2 rounded-xl">
                             <img src="assets/logoPage.png" alt="logo" class="w-10 h-10">
                         </div>
@@ -549,7 +554,7 @@
                 </div>
 
                 <!-- Quick Links -->
-                <div class="ml-16">
+                <div class="md:ml-20 mx-auto">
                     <h3 class="text-white mb-4 font-bold text-lg">Poveznice</h3>
                     <ul class="space-y-2">
                         <li><a href="#about" class="text-white/80 hover:text-white transition-colors">O nama</a></li>
@@ -560,8 +565,8 @@
                 </div>
 
                 <!-- Programs -->
-                <div>
-                    <h3 class="text-white mb-4 font-bold text-lg">Programi</h3>
+                <div class="mx-auto md:mx-0">
+                    <h3 class="text-white mb-4 font-bold text-lg text-center md:text-left">Programi</h3>
                     <ul class="space-y-2">
                         <li class="text-white/80">Program za malu djecu</li>
                         <li class="text-white/80">Predškolski program</li>
@@ -571,8 +576,8 @@
                 </div>
 
                 <!-- Contact Info -->
-                <div>
-                    <h3 class="text-white mb-4 font-bold text-lg">Kontaktirajte nas</h3>
+                <div class="mx-auto text-center">
+                    <h3 class="text-white mb-4 font-bold text-lg text-center md:text-left">Kontaktirajte nas</h3>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-2">
                             <svg class="w-5 h-5 shrink-0 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
