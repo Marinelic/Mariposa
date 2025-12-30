@@ -7,4 +7,4 @@ Ovo je modernizirana web stranica za obrt za čuvanje djece **Mariposa**, izrađ
 - **HTML5**
 - **Tailwind CSS**
 - **JavaScript Vanilla**
-- **Resposive**
+- **Responsive**
